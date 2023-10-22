@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+        li {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            padding: 10px;
+            list-style: none;
+        }
+
+        li>a {
+            color: black;
+            text-decoration: none;
+        }
+
+        h1 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+            font-size: 32px;
+        }
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        main {
+            padding: 60px 70px;
+            display: flex;
+            background-color: rgba(217, 217, 217, 0.40);
+        }
+
+        @media only screen and (max-width:600px) {
+            main {
+                display: block !important;
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .searchBar {
+            background-color: white;
+            border-radius: 10px;
+            margin: auto;
+            height: 33px;
+        }
+
+        .searchBar>input {
+            background-color: white;
+            border-radius: 10px;
+            padding: 0px 20px;
+            height: 33px;
+            width: 25vw;
+        }
+
+        .detail {
+            display: flex;
+        }
+        .detailCard,
+        .checkoutCard {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 10px;
+        }
+
+        .previewContainer {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .preview {
+            object-fit: cover;
+            width: 8vw;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .checkoutImg {
+            width: 100%;
+        }
+
+        .price {
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body style="margin:0; padding:0,">
+    <!-- header section -->
+    <header
+        style="display:flex; height:62px; background-color: #FFCE2B; align-items: center; position: fixed; width:100vw; padding: 0px 72px; justify-content: space-between;">
+        <!-- logo -->
+        <div style="align-items: center; justify-content: center; display: flex;">
+            <img src="assets/Traveler.png" alt="">
+            <img src="assets/Travel.png" alt="">
+        </div>
+
+        <nav style="display:flex; gap: 20px;">
+            <!-- menu -->
+            <ul style="display:flex; padding: 0;">
+                <li><a href="">Beranda</a></li>
+                <li><a href="">Promo</a></li>
+                <li><a href="">Trending</a></li>
+            </ul>
+
+            <div class="searchBar">
+                <input style="border: none;" type="text" placeholder="Search..">
+            </div>
+
+            <div class="userSection" style="display: flex; align-items: center;">
+                <div class="mesaage">
+                    <img src="assets/Traveler.png" alt="">
+                </div>
+                <div class="chcekout">
+                    <img src="assets/Traveler.png" alt="">
+                </div>
+                <div class="profile">
+                    <img src="assets/Traveler.png" alt="">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- main section -->
+    <main>
+        <!-- product detail -->
+        <article class="detailCard" style="width: 60vw;">
+            <div class="breadcrumb">
+                <a href="#">Beranda</a>
+                <span> > </span>
+                <a href="#">Pencarian</a>
+                <span> > </span>
+            </div>
+            <div class="title">
+                <h1>Pesona Pulau Dewata Bali</h1>
+            </div>
+            <div class="description">
+                <h2>Deskripsi</h2>
+                <p>Bali merupakan salah satu pulau terbesar di Indonesia, yang terletak di antara pulau Jawa dan pulau
+                    Lombok. Pulau yang dikenal dengan julukan Pulau Dewata ini, juga merupakan salah satu provinsi yang
+                    dimiliki Indonesia. <br />
+                    Provinsi ini juga terdiri dari deretan pulau kecil lainnya, di antaranya adalah pulau Nusa Penida,
+                    pulau Serangan, pulau Menjangan, dan pulau Ceningan</p>
+                <a href="#">lihat detail</a>
+            </div>
+            <div class="detail">
+                <div class="rating" style="flex: 1;">
+                    <h2>Rating & Ulasan</h2>
+                </div>
+                <div class="previewSection" style="flex: 1;">
+                    <h2>Preview</h2>
+                    <div class="previewContainer">
+                        <img class="preview"
+                            src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
+                            alt="" />
+                        <img class="preview"
+                            src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
+                            alt="" />
+                        <img class="preview"
+                            src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- chcekout card -->
+        <aside class="checkoutCard" style="width: 30vw">
+            <h2>Checkout</h2>
+            <img class="checkoutImg"
+                src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
+                alt=""/>
+            <div class="row">
+                <div class="price">
+                    <p>subtotal</p>
+                    <p>Rp. 150.000</p>
+                </div>
+                <div class="price">
+                    <p>subtotal</p>
+                    <p>Rp. 150.000</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- footer section -->
+    <footer>
+
+
+    </footer>
+</body>
+
+</html>

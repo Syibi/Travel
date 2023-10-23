@@ -48,6 +48,21 @@
         @media only screen and (max-width:600px) {
             main {
                 display: block !important;
+                padding:60px 10px;
+            }
+            
+            .checkoutCard,
+            .detailCard {
+                width: auto !important;
+                margin:10px !important;
+            }
+            
+            .detail {
+                flex-direction: column;
+            }
+            
+            .preview {
+                width: 25vw !important;
             }
         }
 
@@ -97,10 +112,41 @@
 
         .checkoutImg {
             width: 100%;
+            border-radius :10px;
         }
 
         .price {
             justify-content: space-between;
+        }
+        
+        .orderContainer {
+            display: flex ;
+            position :relative;
+            justify-content: center;
+        }
+        
+        .buttonContainer {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            flex-direction: row;
+            justify-content :space-between;
+            background-color: rgba(255, 255, 255, .15);  
+            backdrop-filter: blur(5px);
+            width:50%;
+            height :45px;
+            border-radius: 10px;
+            position : absolute ;
+            bottom: 5%;
+            transform:translate (-50%, -50%);
+            z-index: 99;
+        }
+        
+        .orderButton {
+            border-radius: 5px;
+            background-color: black;
+            height: 40px;
+            width: 40px;
         }
     </style>
 </head>
@@ -186,9 +232,16 @@
         <!-- chcekout card -->
         <aside class="checkoutCard" style="width: 30vw">
             <h2>Checkout</h2>
-            <img class="checkoutImg"
+            <div class="orderContainer">
+                <img class="checkoutImg"
                 src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
                 alt=""/>
+                <div class="buttonContainer">
+                   <div class="orderButton">-</div>
+                   <p>test</p>  
+                   <div class="orderButton">+</div>
+                </div> 
+            </div>
             <div class="row">
                 <div class="price">
                     <p>subtotal</p>

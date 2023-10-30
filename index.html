@@ -7,6 +7,10 @@
     <title>Travel App</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
         li {
             font-family: 'Lato', sans-serif;
@@ -38,9 +42,20 @@
             font-size: 16px;
             line-height: 24px;
         }
+        
+        header {
+            display:flex; 
+            height:62px; 
+            background-color: #FFCE2B; 
+            align-items: center; 
+            position: fixed; 
+            width:100vw; 
+            padding: 0px 72px; 
+            justify-content: space-between;
+        }
 
         main {
-            padding: 60px 70px;
+            padding: 60px 70px 30px 70px;
             display: flex;
             background-color: rgba(217, 217, 217, 0.40);
         }
@@ -116,6 +131,7 @@
         }
 
         .price {
+            display :flex;
             justify-content: space-between;
         }
         
@@ -133,7 +149,7 @@
             justify-content :space-between;
             background-color: rgba(255, 255, 255, .15);  
             backdrop-filter: blur(5px);
-            width:50%;
+            width:40%;
             height :45px;
             border-radius: 10px;
             position : absolute ;
@@ -147,14 +163,40 @@
             background-color: black;
             height: 40px;
             width: 40px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+        }
+        
+        .cartButton {
+            background-color: #FFCE2B;
+            border-radius: 5px;
+            border-width: 0px;
+            width :60px;
+            height: 60px;
+        }
+        
+        .CheckoutButton {
+           background-color: #FFCE2B;
+            border-radius: 5px;
+            border-width: 0px;
+            width :81%;
+            height :60px;
+        }
+        footer {
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            color: white;
         }
     </style>
 </head>
 
 <body style="margin:0; padding:0,">
     <!-- header section -->
-    <header
-        style="display:flex; height:62px; background-color: #FFCE2B; align-items: center; position: fixed; width:100vw; padding: 0px 72px; justify-content: space-between;">
+    <header>
         <!-- logo -->
         <div style="align-items: center; justify-content: center; display: flex;">
             <img src="assets/Traveler.png" alt="">
@@ -238,27 +280,34 @@
                 alt=""/>
                 <div class="buttonContainer">
                    <div class="orderButton">-</div>
-                   <p>test</p>  
+                   <p style="color:white">01</p>  
                    <div class="orderButton">+</div>
                 </div> 
+           </div>
+            <div>
+                <div class="price">
+                    <p>subtotal</p>
+                    <p>Rp. 150.000</p>
+                </div>
+                <div class="price">
+                    <p>subtotal</p>
+                    <p>Rp. 150.000</p>
+                </div>
+                <div class="price">
+                    <p>subtotal</p>
+                    <p>Rp. 150.000</p>
+                </div>
             </div>
-            <div class="row">
-                <div class="price">
-                    <p>subtotal</p>
-                    <p>Rp. 150.000</p>
-                </div>
-                <div class="price">
-                    <p>subtotal</p>
-                    <p>Rp. 150.000</p>
-                </div>
+            <div>
+               <button class="cartButton">p</button> 
+               <button class="CheckoutButton" type="submit">bayar langsung</button>
             </div>
         </aside>
     </main>
 
     <!-- footer section -->
     <footer>
-
-
+        <p>created by Syibi @ 2023</p>
     </footer>
 </body>
 

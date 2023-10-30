@@ -7,6 +7,7 @@
     <title>Travel App</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -22,6 +23,10 @@
         li>a {
             color: black;
             text-decoration: none;
+        }
+
+        li>a:hover {
+            color: darkblue;
         }
 
         h1 {
@@ -42,40 +47,43 @@
             font-size: 16px;
             line-height: 24px;
         }
-        
-        header {
-            display:flex; 
-            height:62px; 
-            background-color: #FFCE2B; 
-            align-items: center; 
-            position: fixed; 
-            width:100vw; 
-            padding: 0px 72px; 
-            justify-content: space-between;
-        }
 
         main {
-            padding: 60px 70px 30px 70px;
+            padding: 70px 70px 30px 70px;
             display: flex;
             background-color: rgba(217, 217, 217, 0.40);
         }
 
-        @media only screen and (max-width:600px) {
+        @media only screen and (max-width:900px) {
             main {
                 display: block !important;
-                padding:60px 10px;
+                padding: 80px 15px;
             }
-            
+
+            header {
+                padding: 15px 25px !important;
+            }
+
+            .searchBar,
+            .userSection,
+            nav {
+                display: none !important;
+            }
+
+            .dropdown {
+                display: block !important;
+            }
+
             .checkoutCard,
             .detailCard {
                 width: auto !important;
-                margin:10px !important;
+                margin: 10px !important;
             }
-            
+
             .detail {
                 flex-direction: column;
             }
-            
+
             .preview {
                 width: 25vw !important;
             }
@@ -84,6 +92,18 @@
         .row {
             display: flex;
             flex-direction: row;
+        }
+
+        header {
+            background-color: #FFCE2B;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            padding: 15px 72px;
+            left: 0px;
+            right: 0px;
+            position: fixed;
+            z-index: 100;
         }
 
         .searchBar {
@@ -101,9 +121,59 @@
             width: 25vw;
         }
 
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+        }
+
         .detail {
             display: flex;
         }
+
+        .breadcrumb>a,
+        span {
+            padding: 0px 2px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .breadcrumb>a:hover {
+            color: darkblue;
+        }
+
+        .title {
+            margin-top: 25px;
+        }
+
         .detailCard,
         .checkoutCard {
             background-color: white;
@@ -127,37 +197,37 @@
 
         .checkoutImg {
             width: 100%;
-            border-radius :10px;
+            border-radius: 10px;
         }
 
         .price {
-            display :flex;
+            display: flex;
             justify-content: space-between;
         }
-        
+
         .orderContainer {
-            display: flex ;
-            position :relative;
+            display: flex;
+            position: relative;
             justify-content: center;
         }
-        
+
         .buttonContainer {
             display: flex;
             align-items: center;
             padding: 5px;
             flex-direction: row;
-            justify-content :space-between;
-            background-color: rgba(255, 255, 255, .15);  
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, .15);
             backdrop-filter: blur(5px);
-            width:40%;
-            height :45px;
+            width: 40%;
+            height: 45px;
             border-radius: 10px;
-            position : absolute ;
+            position: absolute;
             bottom: 5%;
-            transform:translate (-50%, -50%);
+            transform: translate (-50%, -50%);
             z-index: 99;
         }
-        
+
         .orderButton {
             border-radius: 5px;
             background-color: black;
@@ -169,22 +239,23 @@
             align-items: center;
             font-size: 28px;
         }
-        
+
         .cartButton {
             background-color: #FFCE2B;
             border-radius: 5px;
             border-width: 0px;
-            width :60px;
+            width: 60px;
             height: 60px;
         }
-        
+
         .CheckoutButton {
-           background-color: #FFCE2B;
+            background-color: #FFCE2B;
             border-radius: 5px;
             border-width: 0px;
-            width :81%;
-            height :60px;
+            width: 81%;
+            height: 60px;
         }
+
         footer {
             background-color: blue;
             display: flex;
@@ -194,45 +265,49 @@
     </style>
 </head>
 
-<body style="margin:0; padding:0,">
-    <!-- header section -->
+<body style="margin:0; padding:0; width:100%">
     <header>
-        <!-- logo -->
         <div style="align-items: center; justify-content: center; display: flex;">
             <img src="assets/Traveler.png" alt="">
             <img src="assets/Travel.png" alt="">
+            <nav style="display:flex; gap: 20px;">
+                <ul style="display:flex; padding: 0;">
+                    <li><a href="">Beranda</a></li>
+                    <li><a href="">Promo</a></li>
+                    <li><a href="">Trending</a></li>
+                </ul>
+            </nav>
         </div>
 
-        <nav style="display:flex; gap: 20px;">
-            <!-- menu -->
-            <ul style="display:flex; padding: 0;">
-                <li><a href="">Beranda</a></li>
-                <li><a href="">Promo</a></li>
-                <li><a href="">Trending</a></li>
-            </ul>
-
-            <div class="searchBar">
-                <input style="border: none;" type="text" placeholder="Search..">
+        <div class="searchBar">
+            <input style="border: none;" type="text" placeholder="Search..">
+        </div>
+        <div class="userSection" style="display: flex; align-items: center;">
+            <div class="mesaage">
+                <img src="assets/Traveler.png" alt="">
             </div>
-
-            <div class="userSection" style="display: flex; align-items: center;">
-                <div class="mesaage">
-                    <img src="assets/Traveler.png" alt="">
-                </div>
-                <div class="chcekout">
-                    <img src="assets/Traveler.png" alt="">
-                </div>
-                <div class="profile">
-                    <img src="assets/Traveler.png" alt="">
-                </div>
+            <div class="checkout">
+                <img src="assets/Traveler.png" alt="">
             </div>
-        </nav>
+            <div class="profile">
+                <img src="assets/Traveler.png" alt="">
+            </div>
+        </div>
+        
+        <div class="dropdown" style="display: none;">
+            <div class="orderButton">+</div>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
     </header>
 
     <!-- main section -->
     <main>
         <!-- product detail -->
-        <article class="detailCard" style="width: 60vw;">
+        <article class="detailCard" style="width: 60vw;padding:30px 35px;">
             <div class="breadcrumb">
                 <a href="#">Beranda</a>
                 <span> > </span>
@@ -241,6 +316,15 @@
             </div>
             <div class="title">
                 <h1>Pesona Pulau Dewata Bali</h1>
+            </div>
+            <div class="description">
+                <h2>Deskripsi</h2>
+                <p>Bali merupakan salah satu pulau terbesar di Indonesia, yang terletak di antara pulau Jawa dan pulau
+                    Lombok. Pulau yang dikenal dengan julukan Pulau Dewata ini, juga merupakan salah satu provinsi yang
+                    dimiliki Indonesia. <br />
+                    Provinsi ini juga terdiri dari deretan pulau kecil lainnya, di antaranya adalah pulau Nusa Penida,
+                    pulau Serangan, pulau Menjangan, dan pulau Ceningan</p>
+                <a href="#">lihat detail</a>
             </div>
             <div class="description">
                 <h2>Deskripsi</h2>
@@ -276,14 +360,14 @@
             <h2>Checkout</h2>
             <div class="orderContainer">
                 <img class="checkoutImg"
-                src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
-                alt=""/>
+                    src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
+                    alt="" />
                 <div class="buttonContainer">
-                   <div class="orderButton">-</div>
-                   <p style="color:white">01</p>  
-                   <div class="orderButton">+</div>
-                </div> 
-           </div>
+                    <div class="orderButton">-</div>
+                    <p style="color:white">01</p>
+                    <div class="orderButton">+</div>
+                </div>
+            </div>
             <div>
                 <div class="price">
                     <p>subtotal</p>
@@ -299,14 +383,14 @@
                 </div>
             </div>
             <div>
-               <button class="cartButton">p</button> 
-               <button class="CheckoutButton" type="submit">bayar langsung</button>
+                <button class="cartButton">p</button>
+                <button class="CheckoutButton" type="submit">bayar langsung</button>
             </div>
         </aside>
     </main>
 
     <!-- footer section -->
-    <footer>
+    <footer style="padding: 10px;">
         <p>created by Syibi @ 2023</p>
     </footer>
 </body>

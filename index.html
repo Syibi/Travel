@@ -13,6 +13,28 @@
             padding: 0;
         }
 
+        h1 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 900;
+            font-size: 32px;
+        }
+
+        h2 {
+            margin: 15px 0px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+        }
+
+        p {
+            margin: 10px 0px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            font-style: normal;
+            line-height: 24px;
+        }
+
         li {
             font-family: 'Lato', sans-serif;
             font-weight: 700;
@@ -29,31 +51,14 @@
             color: darkblue;
         }
 
-        h1 {
-            font-family: 'Lato', sans-serif;
-            font-weight: 900;
-            font-size: 32px;
-        }
-
-        h2 {
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-        }
-
-        p {
-            font-family: 'Lato', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 24px;
-        }
 
         main {
-            padding: 70px 70px 30px 70px;
+            padding: 80px 70px 0px 70px;
             display: flex;
             background-color: rgba(217, 217, 217, 0.40);
         }
 
+        /* mobile appearence */
         @media only screen and (max-width:900px) {
             main {
                 display: block !important;
@@ -70,8 +75,19 @@
                 display: none !important;
             }
 
-            .dropdown {
-                display: block !important;
+            .mobileNav {
+                display: flex !important;
+                border-radius: 10px;
+                background-color: #267DFF;
+                height: 40px;
+                width: 40px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 28px;
+                border-width: 0;
+                cursor: pointer;
             }
 
             .checkoutCard,
@@ -85,13 +101,12 @@
             }
 
             .preview {
-                width: 25vw !important;
+                width: 22vw !important;
             }
-        }
 
-        .row {
-            display: flex;
-            flex-direction: row;
+            .rating {
+                flex-direction: row !important;
+            }
         }
 
         header {
@@ -106,6 +121,20 @@
             z-index: 100;
         }
 
+        .navBar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav {
+            padding-left: 50px;
+        }
+
+        nav>ul {
+            display: flex;
+        }
+
         .searchBar {
             background-color: white;
             border-radius: 10px;
@@ -117,43 +146,33 @@
             background-color: white;
             border-radius: 10px;
             padding: 0px 20px;
-            height: 33px;
-            width: 25vw;
+            height: 35px;
+            width: 30vw;
+            border: none;
         }
 
-        /* Dropdown Content (Hidden by Default) */
-        .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        }
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        }
-
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {background-color: #f1f1f1}
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-        display: block;
-        }
-
-        /* Change the background color of the dropdown button when the dropdown content is shown */
-        .dropdown:hover .dropbtn {
-        background-color: #3e8e41;
-        }
-
-        .detail {
+        .userSection {
             display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .mobileNav {
+            display: none;
+        }
+
+        #myLinks a {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            padding: 10px;
+            list-style: none;
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        #myLinks a:hover {
+            color: white;
         }
 
         .breadcrumb>a,
@@ -164,36 +183,80 @@
             font-size: 16px;
             color: black;
             text-decoration: none;
+
         }
 
         .breadcrumb>a:hover {
-            color: darkblue;
-        }
-
-        .title {
-            margin: 25px 0px;
+            color: #267DFF;
         }
 
         .detailCard,
         .checkoutCard {
             background-color: white;
             border-radius: 10px;
-            padding: 20px;
+            padding: 20px 25px;
             margin: 20px 10px;
+            box-shadow: 0px 3px 10px 0px rgba(217, 217, 217, 0.20);
         }
-        
+
+        .title {
+            margin: 25px 0px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+        }
+
+        .description>a {
+            color: black;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .description>a:hover {
+            color: #267DFF;
+        }
+
+        .detail {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .star {
+            display: flex;
+            flex: 3;
+            flex-direction: column;
+        }
+
+        .currentRating {
+            font-family: Lato;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        .reviewTotal {
+            font-family: Lato;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
         .review {
             display: flex;
-            background-color: grey;
-            height: 50px;
+            flex: 4;
+            flex-direction: column;
+            background-color: #EAEFEB;
             border-radius: 10px;
-            align-items: center;
+            padding: 10px;
         }
 
         .previewContainer {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             display: flex;
-            gap: 5px;
+            gap: 15px;
             justify-content: space-between;
         }
 
@@ -205,14 +268,22 @@
         }
 
         .checkoutImg {
+            height: 35vh;
             width: 100%;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
         .price {
             margin: 10px 0px;
             display: flex;
             justify-content: space-between;
+        }
+
+        .lineDivider {
+            background-color: black;
+            height: 1px;
+            width: 100%;
         }
 
         .orderContainer {
@@ -224,7 +295,7 @@
         .buttonContainer {
             display: flex;
             align-items: center;
-            padding: 5px;
+            padding: 6px;
             flex-direction: row;
             justify-content: space-between;
             background-color: rgba(255, 255, 255, .15);
@@ -239,8 +310,8 @@
         }
 
         .orderButton {
-            border-radius: 5px;
-            background-color: black;
+            border-radius: 10px;
+            background-color: #267DFF;
             height: 40px;
             width: 40px;
             color: white;
@@ -248,26 +319,44 @@
             justify-content: center;
             align-items: center;
             font-size: 28px;
+            border-width: 0;
+            cursor: pointer;
+        }
+
+        .checkoutContainer {
+            padding: 20px 0px;
+            display: flex;
+            justify-content: space-between;
         }
 
         .cartButton {
             background-color: #FFCE2B;
-            border-radius: 5px;
+            padding-right: 3px;
+            border-radius: 10px;
             border-width: 0px;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
+            box-shadow: 0px 3px 10px 0px #ffce2b85;
+            cursor: pointer;
         }
 
         .CheckoutButton {
-            background-color: #FFCE2B;
-            border-radius: 5px;
+            border-radius: 10px;
+            background: #267DFF;
             border-width: 0px;
-            width: 81%;
-            height: 60px;
+            width: 82%;
+            height: 50px;
+            color: #FFF;
+            font-family: Lato;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 800;
+            box-shadow: 0px 3px 10px 0px #267dff71;
+            cursor: pointer;
         }
 
         footer {
-            background-color: blue;
+            background-color: #267DFF;
             display: flex;
             justify-content: center;
             color: white;
@@ -275,13 +364,14 @@
     </style>
 </head>
 
-<body style="margin:0; padding:0; width:100%">
+<body>
+    <!-- header section -->
     <header>
-        <div style="align-items: center; justify-content: center; display: flex;">
+        <div class="navBar">
             <img src="assets/Traveler.png" alt="">
             <img src="assets/Travel.png" alt="">
-            <nav style="display:flex; gap: 20px;">
-                <ul style="display:flex; padding: 0;">
+            <nav>
+                <ul>
                     <li><a href="">Beranda</a></li>
                     <li><a href="">Promo</a></li>
                     <li><a href="">Trending</a></li>
@@ -290,34 +380,42 @@
         </div>
 
         <div class="searchBar">
-            <input style="border: none;" type="text" placeholder="Search..">
+            <input type="text" placeholder="Cari destinasi tempat wisata impianmu !.">
         </div>
-        <div class="userSection" style="display: flex; align-items: center;">
+
+        <div class="userSection">
             <div class="mesaage">
-                <img src="assets/Traveler.png" alt="">
+                <img src="assets/Mail.png" alt="">
             </div>
             <div class="checkout">
-                <img src="assets/Traveler.png" alt="">
+                <img src="assets/Cart.png" alt="">
             </div>
             <div class="profile">
-                <img src="assets/Traveler.png" alt="">
+                <img src="assets/Profile-Transparent.png" alt="" width="40px">
             </div>
         </div>
-        
-        <div class="dropdown" style="display: none;">
-            <div class="orderButton">+</div>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
+
+        <!-- mobile navbar -->
+
+        <div id="myLinks" style="display: none;">
+            <a href="#news">Beranda</a>
+            <a href="#contact">Promo</a>
+            <a href="#about">Trending</a>
         </div>
+
+        <div class="mobileNav" onclick="myFunction()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+        </div>        
     </header>
 
     <!-- main section -->
     <main>
         <!-- product detail -->
-        <article class="detailCard" style="width: 60vw;padding:30px">
+        <article class="detailCard" style="width: 60vw">
             <div class="breadcrumb">
                 <a href="#">Beranda</a>
                 <span> > </span>
@@ -327,43 +425,44 @@
             <div class="title">
                 <h1>Pesona Pulau Dewata Bali</h1>
             </div>
-            <div class="description" style="margin:25px 0px;">
-                <h2 style="margin:10px 0px">Deskripsi</h2>
-                <p style="margin:10px 0pc">Bali merupakan salah satu pulau terbesar di Indonesia, yang terletak di antara pulau Jawa dan pulau
+            <div class="description">
+                <h2>Deskripsi</h2>
+                <p>Bali merupakan salah satu pulau terbesar di Indonesia, yang terletak di antara pulau Jawa dan pulau
                     Lombok. Pulau yang dikenal dengan julukan Pulau Dewata ini, juga merupakan salah satu provinsi yang
-                    dimiliki Indonesia. <br />
-                    Provinsi ini juga terdiri dari deretan pulau kecil lainnya, di antaranya adalah pulau Nusa Penida,
-                    pulau Serangan, pulau Menjangan, dan pulau Ceningan</p>
-                <a href="#" style="color:black; text-decoration:none;">lihat detail</a>
+                    dimiliki Indonesia.</p>
+                <p>Provinsi ini juga terdiri dari deretan pulau kecil lainnya, di antaranya adalah pulau Nusa
+                    Penida,pulau Serangan, pulau Menjangan, dan pulau Ceningan.</p>
+                <a href="#">lihat detail</a>
             </div>
             <div class="detail">
-                <div class="rating" style="flex: 1; margin:10px 0px">
-                    <h2 style="margin:10px 0px">Rating & Ulasan</h2>
-                    <div>
+                <div class="ratingSection">
+                    <h2>Rating & Ulasan</h2>
+                    <div class="rating" style="display: flex;">
                         <div class="star">
-                            4/5 star
+                            <div class="currentRating">4.7 / 5.0 <svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                    height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                </svg></div>
+                            <div class="reviewTotal">1000 Review</div>
                         </div>
                         <div class="review">
-                            <p>tempatnya Bagus suasanyan sejuk...</p>
+                            <span style="margin-bottom: 5px;">Anonim</span>
+                            <span style="font-style: italic; font-weight: 400;">"tempatnya Bagus dan indah ..."</span>
                         </div>
                     </div>
                 </div>
-                <div class="previewSection" style="flex: 1;">
-                    <h2 style="margin:10px 0pc">Preview</h2>
+                <div class="previewSection">
+                    <h2>Preview</h2>
                     <div class="previewContainer">
-                        <img class="preview"
-                            src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
-                            alt="" />
-                        <img class="preview"
-                            src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
-                            alt="" />
-                        <img class="preview"
-                            src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
-                            alt="" />
+                        <img class="preview" src="assets/preview1.png" alt="" />
+                        <img class="preview" src="assets/preview2.png" alt="" />
+                        <img class="preview" src="assets/preview3.png" alt="" />
                     </div>
                 </div>
             </div>
         </article>
+
         <!-- chcekout card -->
         <aside class="checkoutCard" style="width: 30vw">
             <h2>Checkout</h2>
@@ -372,41 +471,104 @@
                     src="https://d3p0bla3numw14.cloudfront.net/news-content/img/2021/05/03112735/Tempat-Tinggal-Terbaik-di-Bali.jpg"
                     alt="" />
                 <div class="buttonContainer">
-                    <div class="orderButton">-</div>
-                    <p style="color:white">01</p>
-                    <div class="orderButton">+</div>
+                    <button class="orderButton" onclick=min()><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg></button>
+                    <p id="currentOrder" style="color:white">0</p>
+                    <button class="orderButton" onclick=add()><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                            height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                        </svg></button>
                 </div>
             </div>
             <div>
                 <div class="price">
-                    <p>subtotal</p>
-                    <p>Rp. 150.000</p>
+                    <span>Paket Wisata ke Bali</span>
+                    <span id="currentPrice">Rp.0</span>
                 </div>
                 <div class="price">
-                    <p>subtotal</p>
-                    <p>Rp. 150.000</p>
+                    <span>Diskon</span>
+                    <span>Rp 20.000,00</span>
+                </div>
+                <div class="lineDivider">
                 </div>
                 <div class="price">
-                    <p>subtotal</p>
-                    <p>Rp. 150.000</p>
+                    <span>Total</span>
+                    <span id="totalPrice">Rp. 0</span>
                 </div>
             </div>
-            <div>
-                <button class="cartButton">p</button>
-                <button class="CheckoutButton" type="submit"onclick=alert.log("masuk")>bayar langsung</button>
+            <div class="checkoutContainer">
+                <button class="cartButton"><img src="assets/Cart-w.png" alt=""></button>
+                <button class="CheckoutButton" type="submit" onclick=pesa()>Pesan Tiket</button>
             </div>
-      </aside>
+        </aside>
     </main>
 
     <!-- footer section -->
     <footer style="padding: 10px;">
-        <p>created by Syibi @ 2023</p>
+        <p>Travel by Syibi @ 2023</p>
     </footer>
+
+    <script type="text/javascript">
+        let orderText = document.getElementById("currentOrder")
+        let priceText = document.getElementById("currentPrice")
+        let totalText = document.getElementById("totalPrice")
+
+        let currentOrder = 0;
+        let currentPrice = 0;
+        let totalPrice = 0;
+
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        function pesan() {
+            if (currentOrder > 0) {
+                alert('Selamat, ' + currentOrder + ' Tiket berhasil dipesan')
+            } else {
+                alert('Gagal pesan tiket, mohon Pilih jumlah tiket')
+            }
+        }
+
+        function add() {
+            currentOrder = currentOrder + 1
+            currentPrice = currentOrder * 50000
+            total()
+        }
+        function min() {
+            if (currentOrder > 0) {
+                currentOrder = currentOrder - 1
+                currentPrice = currentOrder * 50000
+                total()
+            }
+        }
+        function total() {
+            if (currentOrder > 0) {
+                totalPrice = currentPrice - 20000
+                currentPrice = Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR"
+                }).format(currentPrice)
+
+                totalPrice = Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR"
+                }).format(totalPrice)
+                totalText.innerHTML = totalPrice
+            } else {
+                totalText.innerHTML = "Rp. 0"
+            }
+            orderText.innerHTML = currentOrder;
+            priceText.innerHTML = currentPrice;
+        }
+    </script>
 </body>
-<script>
-    checkJs = () => {
-        alert.log("test")
-    }
-</script>
 
 </html>
